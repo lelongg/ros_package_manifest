@@ -2,7 +2,7 @@
     <name>rosmaster</name>
     <version>1.14.3</version>
     <description>
-        <!-- ROS <a href="http://ros.org/wiki/Master">Master</a> implementation. -->
+        ROS <a href="http://ros.org/wiki/Master">Master</a> implementation.
     </description>
     <maintainer email="dthomas@osrfoundation.org">Dirk Thomas</maintainer>
     <license>BSD</license>
