@@ -1,8 +1,16 @@
 [package]
 name = "ros_package_manifest"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Gérald Lelong <gerald.lelong@easymov.fr>"]
 edition = "2018"
+description = "This crate parses ROS package manifest (also known as package.xml)"
+license = "ISC"
+repository = "https://github.com/lelongg/ros_package_manifest"
+homepage = "https://github.com/lelongg/ros_package_manifest"
+documentation = "https://docs.rs/ros_package_manifest/"
+readme = "README.md"
+keywords = ["ros", "manifest", "package", "xml"]
+categories = ["parser-implementations", "science::robotics"]
 
 [dependencies]
 regex = "1.2.0"
