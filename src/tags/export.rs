@@ -2,7 +2,7 @@ use crate::PackageError;
 use roxmltree::Node;
 use std::convert::TryFrom;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Export {
     pub architecture_independent: bool,
     pub build_type: BuildType,
@@ -12,10 +12,10 @@ pub struct Export {
     pub exported: Vec<Exported>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct BuildType {
-    name: String,
-    condition: Option<String>,
+    pub name: String,
+    pub condition: Option<String>,
 }
 
 impl Default for BuildType {
@@ -40,12 +40,12 @@ impl TryFrom<Node<'_, '_>> for BuildType {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Exported {
-    name: String,
+    pub name: String,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Deprecated {
     pub text: Option<String>,
 }

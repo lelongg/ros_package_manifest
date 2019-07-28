@@ -6,6 +6,7 @@ use std::str::FromStr;
 static PACKAGE_NAME_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"^[[:lower:]][[:word:]]*$").unwrap());
 
+#[derive(Clone, Debug, PartialEq)]
 pub struct PackageName {
     pub name: String,
 }

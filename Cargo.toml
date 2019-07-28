@@ -5,6 +5,6 @@ authors = ["Gérald Lelong <gerald.lelong@easymov.fr>"]
 edition = "2018"
 
 [dependencies]
-regex = "1"
-once_cell = "0.2.1"
-roxmltree = "0.6.0"
+regex = "1.2.0"
+once_cell = "0.2.4"
+roxmltree = "0.6.1"

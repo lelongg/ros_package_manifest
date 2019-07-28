@@ -8,7 +8,7 @@ use crate::{
 use roxmltree::Node;
 use std::convert::TryFrom;
 
-#[derive(Default, Debug, Clone)]
+#[derive(Default, Debug, Clone, PartialEq)]
 pub struct PackageCommon {
     pub name: String,
     pub version: Version,

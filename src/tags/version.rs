@@ -6,7 +6,7 @@ use std::convert::TryFrom;
 static VERSION_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"^[[:digit:]]+.[[:digit:]]+.[[:digit:]]+$").unwrap());
 
-#[derive(Default, Debug, Clone)]
+#[derive(Default, Debug, Clone, PartialEq)]
 pub struct Version {
     pub version: String,
     pub compatibility: String,

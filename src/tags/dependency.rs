@@ -1,7 +1,7 @@
 use roxmltree::Node;
 use std::convert::TryFrom;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Dependency {
     pub name: String,
     pub version_lt: Option<String>,

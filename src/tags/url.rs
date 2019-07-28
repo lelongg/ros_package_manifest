@@ -1,13 +1,13 @@
 use roxmltree::Node;
 use std::convert::TryFrom;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Url {
     pub url: String,
     pub url_type: UrlType,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum UrlType {
     Website,
     BugTracker,

@@ -7,7 +7,7 @@ use crate::{
 use std::convert::TryFrom;
 use std::str::FromStr;
 
-#[derive(Default, Debug, Clone)]
+#[derive(Default, Debug, Clone, PartialEq)]
 pub struct Package1 {
     pub common: PackageCommon,
     pub run_depend: Vec<Dependency>,

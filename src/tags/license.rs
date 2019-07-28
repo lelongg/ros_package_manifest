@@ -1,7 +1,7 @@
 use roxmltree::Node;
 use std::convert::TryFrom;
 
-#[derive(Default, Debug, Clone)]
+#[derive(Default, Debug, Clone, PartialEq)]
 pub struct License {
     pub license: String,
     pub file: Option<String>,
