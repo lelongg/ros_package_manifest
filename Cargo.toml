@@ -1,6 +1,6 @@
 [package]
 name = "ros_package_manifest"
-version = "0.1.0"
+version = "0.1.1-alpha.0"
 authors = ["Gérald Lelong <gerald.lelong@easymov.fr>"]
 edition = "2018"
 description = "This crate parses ROS package manifest (also known as package.xml)"
