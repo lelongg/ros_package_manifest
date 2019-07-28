@@ -1,3 +1,4 @@
+use err_derive::Error;
 use once_cell::sync::Lazy;
 use regex::Regex;
 use roxmltree::Node;
@@ -12,10 +13,13 @@ pub struct Version {
     pub compatibility: String,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Error)]
 pub enum VersionError {
+    #[error(display = "no version")]
     NoVersion,
+    #[error(display = "invalid version format: {}", _0)]
     InvalidVersionFormat(String),
+    #[error(display = "invalid compatibility format: {}", _0)]
     InvalidCompatibilityFormat(String),
 }
 

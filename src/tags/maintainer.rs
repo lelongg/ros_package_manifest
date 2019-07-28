@@ -1,3 +1,4 @@
+use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
 
@@ -7,9 +8,11 @@ pub struct Maintainer {
     pub email: String,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Error)]
 pub enum MaintainerError {
+    #[error(display = "no name")]
     NoName,
+    #[error(display = "no email")]
     NoEmail,
 }
 

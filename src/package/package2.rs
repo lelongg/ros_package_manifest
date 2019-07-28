@@ -1,8 +1,8 @@
 use crate::{
+    package::common::PackageCommonMethods,
     package::PackageCommon,
     tags::{Dependency, GetTag},
     PackageError,
-    package::common::PackageCommonMethods,
 };
 use std::convert::TryFrom;
 use std::str::FromStr;

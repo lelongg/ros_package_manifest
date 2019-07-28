@@ -1,3 +1,4 @@
+use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
 
@@ -12,8 +13,9 @@ pub struct Dependency {
     pub condition: Option<String>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Error)]
 pub enum DependencyError {
+    #[error(display = "no name")]
     NoName,
 }
 

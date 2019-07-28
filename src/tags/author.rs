@@ -1,3 +1,4 @@
+use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
 
@@ -7,8 +8,9 @@ pub struct Author {
     pub email: Option<String>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Error)]
 pub enum AuthorError {
+    #[error(display = "no name")]
     NoName,
 }
 

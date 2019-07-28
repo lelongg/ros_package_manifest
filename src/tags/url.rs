@@ -1,3 +1,4 @@
+use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
 
@@ -14,9 +15,11 @@ pub enum UrlType {
     Repository,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Error)]
 pub enum UrlError {
+    #[error(display = "invalid url type: {}", _0)]
     InvalidUrlType(String),
+    #[error(display = "no url")]
     NoUrl,
 }
 
