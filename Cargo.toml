@@ -16,4 +16,4 @@ categories = ["parser-implementations", "science::robotics"]
 regex = "1.2.0"
 once_cell = "0.2.4"
 roxmltree = "0.6.1"
-err-derive = "0.1.5"
+err-derive = "0.3.0"
