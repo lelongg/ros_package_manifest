@@ -1,8 +1,8 @@
-use err_derive::Error;
 use once_cell::sync::Lazy;
 use regex::Regex;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 static VERSION_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"^[[:digit:]]+.[[:digit:]]+.[[:digit:]]+$").unwrap());
@@ -15,11 +15,11 @@ pub struct Version {
 
 #[derive(Debug, Clone, Error)]
 pub enum VersionError {
-    #[error(display = "no version")]
+    #[error("no version")]
     NoVersion,
-    #[error(display = "invalid version format: {}", _0)]
+    #[error("invalid version format: {}", _0)]
     InvalidVersionFormat(String),
-    #[error(display = "invalid compatibility format: {}", _0)]
+    #[error("invalid compatibility format: {}", _0)]
     InvalidCompatibilityFormat(String),
 }
 

@@ -1,6 +1,6 @@
-use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Maintainer {
@@ -10,9 +10,9 @@ pub struct Maintainer {
 
 #[derive(Debug, Clone, Error)]
 pub enum MaintainerError {
-    #[error(display = "no name")]
+    #[error("no name")]
     NoName,
-    #[error(display = "no email")]
+    #[error("no email")]
     NoEmail,
 }
 

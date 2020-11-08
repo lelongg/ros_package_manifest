@@ -28,7 +28,7 @@ impl<'a, 'b> GetTag for Node<'a, 'b> {
         self.descendants()
             .filter(|node| node.is_element() && node.tag_name().name() == tag_name.as_ref())
             .map(T::try_from)
-            .nth(0)
+            .next()
     }
 
     fn get_tags<T>(&self, tag_name: impl AsRef<str>) -> Result<Vec<T>, <T as TryFrom<Self>>::Error>

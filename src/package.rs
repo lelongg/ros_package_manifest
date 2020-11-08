@@ -44,7 +44,7 @@ impl FromStr for Package {
             "1" => Package::Package1(Package1::from_str(package_xml)?),
             "2" => Package::Package2(Package2::from_str(package_xml)?),
             "3" => Package::Package3(Package2::from_str(package_xml)?),
-            format => Err(PackageError::UnknownFormat(format.to_string()))?,
+            format => return Err(PackageError::UnknownFormat(format.to_string())),
         })
     }
 }

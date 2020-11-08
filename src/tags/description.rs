@@ -17,11 +17,7 @@ impl TryFrom<Node<'_, '_>> for Description {
     type Error = PackageError;
     fn try_from(node: Node) -> Result<Self, Self::Error> {
         let description = node
-            .traverse()
-            .filter_map(|edge| match edge {
-                roxmltree::Edge::Open(node) => Some(node),
-                roxmltree::Edge::Close(_) => None,
-            })
+            .descendants()
             .filter(Node::is_text)
             .filter_map(|node| node.text())
             .collect::<String>()

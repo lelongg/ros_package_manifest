@@ -1,6 +1,6 @@
-use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Author {
@@ -10,7 +10,7 @@ pub struct Author {
 
 #[derive(Debug, Clone, Error)]
 pub enum AuthorError {
-    #[error(display = "no name")]
+    #[error("no name")]
     NoName,
 }
 

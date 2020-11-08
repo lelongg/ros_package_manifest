@@ -1,6 +1,6 @@
-use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Dependency {
@@ -15,7 +15,7 @@ pub struct Dependency {
 
 #[derive(Debug, Clone, Error)]
 pub enum DependencyError {
-    #[error(display = "no name")]
+    #[error("no name")]
     NoName,
 }
 

@@ -1,6 +1,6 @@
-use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Default, Debug, Clone, PartialEq)]
 pub struct License {
@@ -10,7 +10,7 @@ pub struct License {
 
 #[derive(Debug, Clone, Error)]
 pub enum LicenseError {
-    #[error(display = "no license")]
+    #[error("no license")]
     NoLicense,
 }
 

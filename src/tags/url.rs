@@ -1,6 +1,6 @@
-use err_derive::Error;
 use roxmltree::Node;
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Url {
@@ -17,9 +17,9 @@ pub enum UrlType {
 
 #[derive(Debug, Clone, Error)]
 pub enum UrlError {
-    #[error(display = "invalid url type: {}", _0)]
+    #[error("invalid url type: {}", _0)]
     InvalidUrlType(String),
-    #[error(display = "no url")]
+    #[error("no url")]
     NoUrl,
 }
 
