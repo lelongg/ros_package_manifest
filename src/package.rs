@@ -160,6 +160,8 @@ mod tests {
                 <exec_depend>rosgraph</exec_depend>
                 <exec_depend>python-defusedxml</exec_depend>
 
+                <doc_depend>doxygen</doc_depend>
+
                 <export>
                     <rosdoc config="rosdoc.yaml"/>
                     <architecture_independent/>
@@ -220,6 +222,17 @@ mod tests {
             },
             build_export_depend: vec![],
             buildtool_export_depend: vec![],
+            doc_depend: vec![
+                Dependency {
+                    name: "doxygen".to_string(),
+                    version_lt: None,
+                    version_lte: None,
+                    version_eq: None,
+                    version_gte: None,
+                    version_gt: None,
+                    condition: None,
+                },
+            ],
             exec_depend: vec![
                 Dependency {
                     name: "rosgraph".to_string(),
