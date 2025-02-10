@@ -14,6 +14,7 @@ pub struct Package2 {
     pub buildtool_export_depend: Vec<Dependency>,
     pub exec_depend: Vec<Dependency>,
     pub depend: Vec<Dependency>,
+    pub doc_depend: Vec<Dependency>
 }
 
 impl PackageCommonMethods for Package2 {
@@ -38,6 +39,10 @@ impl Package2 {
     pub fn depend(&self) -> &Vec<Dependency> {
         &self.depend
     }
+
+    pub fn doc_depend(&self) -> &Vec<Dependency> {
+        &self.doc_depend
+    }
 }
 
 impl FromStr for Package2 {
@@ -55,6 +60,7 @@ impl FromStr for Package2 {
         let exec_depend: Vec<Dependency> =
             root.get_tags("exec_depend").map_err(InvalidDependency)?;
         let depend: Vec<Dependency> = root.get_tags("depend").map_err(InvalidDependency)?;
+        let doc_depend: Vec<Dependency> = root.get_tags("doc_depend").map_err(InvalidDependency)?;
 
         Ok(Self {
             common: PackageCommon::try_from(root)?,
@@ -62,6 +68,7 @@ impl FromStr for Package2 {
             buildtool_export_depend,
             exec_depend,
             depend,
+            doc_depend,
         })
     }
 }
